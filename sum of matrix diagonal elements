@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+#define ROWS 3
+#define COLS 3
+
+int main() {
+  int matrix[ROWS][COLS] = {{1, 2, 3},
+                            {4, 5, 6},
+                            {7, 8, 9}};
+  int diagonal_sum = 0;
+
+  // Display matrix
+  printf("Matrix:\n");
+  for (int i = 0; i < ROWS; i++) {
+    for (int j = 0; j < COLS; j++) {
+      printf("%d ", matrix[i][j]);
+    }
+    printf("\n");
+  }
+
+  // Calculate diagonal sum
+  printf("\nDiagonal elements: ");
+  for (int i = 0; i < ROWS; i++) {
+    diagonal_sum += matrix[i][i];
+    printf("%d ", matrix[i][i]);
+  }
+
+  printf("\nDiagonal sum: %d", diagonal_sum);
+
+  return 0;
+}
