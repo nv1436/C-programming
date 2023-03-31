@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int sumEvenOdd(int start, int end, int type) {
+    if(start > end) {   // base case
+        return 0;
+    }
+    if(type == 0 && start % 2 == 0) {   // if type is 0, add even numbers
+        return start + sumEvenOdd(start + 2, end, type);
+    }
+    if(type == 1 && start % 2 != 0) {   // if type is 1, add odd numbers
+        return start + sumEvenOdd(start + 2, end, type);
+    }
+    return sumEvenOdd(start + 1, end, type);
+}
+
+int main() {
+    int start, end, type;
+    printf("Enter the start and end values: ");
+    scanf("%d%d", &start, &end);
+    printf("Enter 0 to find the sum of even numbers or 1 for odd numbers: ");
+    scanf("%d", &type);
+    int sum = sumEvenOdd(start, end, type);
+    if(type == 0) {
+        printf("The sum of even numbers between %d and %d is %d.", start, end, sum);
+    }
+    else {
+        printf("The sum of odd numbers between %d and %d is %d.", start, end, sum);
+    }
+    return 0;
+}
