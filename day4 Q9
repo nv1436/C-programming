@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+struct point {
+    int x;
+    int y;
+};
+
+struct circle {
+    float radius;
+    struct point center;
+};
+
+float area_of_circle(struct circle c) {
+    float area = M_PI * c.radius * c.radius;
+    return area;
+}
+
+int main() {
+    struct circle c1 = { 5.0, {0, 0} };
+    float area = area_of_circle(c1);
+    printf("The area of the circle is: %.2f\n", area);
+
+    struct circle c2 = { 2.5, {3, 4} };
+    area = area_of_circle(c2);
+    printf("The area of the circle is: %.2f\n", area);
+
+    return 0;
+}
