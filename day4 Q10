@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+struct person {
+    char name[50];
+    int age;
+    float height;
+};
+
+int main() {
+    // Create a variable of type "person" called "p1"
+    struct person p1;
+    
+    // Initialize the fields of "p1" with values of our choice
+    strcpy(p1.name, "John");
+    p1.age = 30;
+    p1.height = 5.8;
+    
+    // Print out the values of the fields
+    printf("Name: %s\n", p1.name);
+    printf("Age: %d\n", p1.age);
+    printf("Height: %f\n", p1.height);
+    
+    return 0;
+}
