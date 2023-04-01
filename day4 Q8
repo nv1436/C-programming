@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+// Define the "song" structure
+struct song {
+    char title[100];
+    char artist[100];
+    char album[100];
+    int year;
+};
+
+// Function to print a song
+void print_song(struct song s) {
+    printf("Title: %s, Artist: %s, Album: %s, Year: %d\n", s.title, s.artist, s.album, s.year);
+}
+
+int main() {
+    // Create a song structure and initialize its fields
+    struct song my_song = {"Bohemian Rhapsody", "Queen", "A Night at the Opera", 1975};
+
+    // Call the print_song function to display the information for the song
+    print_song(my_song);
+
+    return 0;
+}
